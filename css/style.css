@@ -1,3 +1,16 @@
+/* Сброс стилей - делает размеры блоков предсказуемыми */
+* {
+  box-sizing: border-box;
+}
+
+/* Убираем стандартные отступы браузера */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #222222;
+  background-color: #ffffff;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -23,4 +36,111 @@ section {
 
 section h2 {
   margin-top: 0;
+}
+
+/* Отступы для шапки, основного блока и подвала */
+header,
+main,
+footer {
+  padding: 20px;
+}
+
+/* Фон для шапки */
+header {
+  background-color: #f2f2f2;
+}
+
+/* Фон для подвала */
+footer {
+  background-color: #f2f2f2;
+}
+/* Ограничиваем ширину шапки */
+.site-header {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Стиль логотипа */
+.site-logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #222222;
+}
+
+/* Убираем маркеры у списка меню */
+.site-nav__list {
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+/* Отступы между пунктами меню */
+.site-nav__list li {
+  margin-bottom: 8px;
+}
+
+/* Цвет ссылок меню */
+.site-nav__list a {
+  color: #0057b8;
+  text-decoration: none;
+}
+
+/* Подчёркивание при наведении */
+.site-nav__list a:hover {
+  text-decoration: underline;
+}
+/* Hero-блок */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+  padding: 32px 20px;
+  background-color: #eef5ff;
+  border-radius: 12px;
+}
+
+/* Общие стили для секций */
+.section {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+/* Убираем верхний отступ у заголовков */
+.section h2 {
+  margin-top: 0;
+}
+/* Карточка товара */
+.product-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+/* Убираем верхний отступ у заголовка карточки */
+.product-card h3 {
+  margin-top: 0;
+}
+/* Кнопка */
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  color: #ffffff;
+  background-color: #0057b8;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* Кнопка при наведении */
+.button:hover {
+  background-color: #003f86;
+}
+
+/* Боковой информационный блок */
+.aside-info {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+  padding: 16px;
+  border-left: 4px solid #0057b8;
+  background-color: #f7f7f7;
 }
