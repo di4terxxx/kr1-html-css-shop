@@ -69,3 +69,56 @@ orderForm.addEventListener("submit", (event) => {
   // Закрываем модальное окно
   orderDialog.close();
 });
+// Получаем модальное окно по id
+const orderDialog = document.getElementById("order-dialog");
+// Получаем все кнопки "Заказать" в карточках товаров
+const orderButtons = document.querySelectorAll(".product-card__button");
+// Получаем кнопку закрытия модального окна
+const closeDialogButton = document.getElementById("close-order-dialog");
+// Получаем скрытое поле, куда запишем выбранный товар
+const selectedProductInput = document.getElementById("selected-product");
+// Получаем форму заявки
+const orderForm = document.getElementById("order-form");
+// Получаем сообщение об успешной отправке
+const successMessage = document.getElementById("success-message");
+
+// Перебираем все кнопки "Заказать"
+orderButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const productName = button.dataset.product;
+    if (selectedProductInput) {
+      selectedProductInput.value = productName;
+    }
+    if (orderDialog) {
+      orderDialog.showModal();
+    }
+  });
+});
+
+// Закрываем модальное окно по кнопке "Закрыть"
+if (closeDialogButton) {
+  closeDialogButton.addEventListener("click", () => {
+    orderDialog.close();
+  });
+}
+
+// Обрабатываем отправку формы
+if (orderForm) {
+  orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!orderForm.checkValidity()) {
+      orderForm.reportValidity();
+      return;
+    }
+
+    if (successMessage) {
+      successMessage.hidden = false;
+    }
+    orderForm.reset();
+
+    if (orderDialog) {
+      orderDialog.close();
+    }
+  });
+}

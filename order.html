@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Оформление заявки в учебном интернет-магазине"
+    />
+    <title>Оформить заявку — Учебный магазин</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo">ShopProject</a>
+        <nav class="site-nav" aria-label="Главная навигация">
+          <ul class="site-nav__list">
+            <li><a href="index.html" class="site-nav__link">Главная</a></li>
+            <li><a href="catalog.html" class="site-nav__link">Каталог</a></li>
+            <li>
+              <a href="order.html" class="site-nav__link site-nav__link--active"
+                >Оформить заявку</a
+              >
+            </li>
+            <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <h1 class="section__title">Оформление заявки</h1>
+
+      <form class="order-form" id="order-form" novalidate>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">Имя</label>
+          <input
+            class="order-form__input"
+            type="text"
+            id="order-name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">E-mail</label>
+          <input
+            class="order-form__input"
+            type="email"
+            id="order-email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">Телефон</label>
+          <input
+            class="order-form__input"
+            type="tel"
+            id="order-phone"
+            name="phone"
+            required
+            placeholder="+7 (900) 000-00-00"
+          />
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата связи</label>
+          <input
+            class="order-form__input"
+            type="date"
+            id="order-date"
+            name="date"
+          />
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">Тема заявки</label>
+          <select
+            class="order-form__select"
+            id="order-topic"
+            name="topic"
+            required
+          >
+            <option value="">Выберите тему</option>
+            <option value="order">Заказ товара</option>
+            <option value="consult">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment"
+            >Комментарий</label
+          >
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__checkbox-label">
+            <input type="checkbox" name="agree" required />
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button type="reset" class="button button--secondary">
+            Очистить
+          </button>
+          <button type="submit" class="button">Отправить заявку</button>
+        </div>
+      </form>
+
+      <div class="success-message" id="success-message" hidden>
+        Форма успешно отправлена!
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Учебный проект. Все права защищены.</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById("order-form");
+      const successMessage = document.getElementById("success-message");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        successMessage.hidden = false;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

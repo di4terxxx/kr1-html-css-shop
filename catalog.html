@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Учебный интернет-магазин — главная страница"
+      content="Каталог товаров учебного интернет-магазина"
     />
-    <title>Главная — Учебный магазин</title>
+    <title>Каталог — Учебный магазин</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -16,12 +16,14 @@
         <a href="index.html" class="site-header__logo">ShopProject</a>
         <nav class="site-nav" aria-label="Главная навигация">
           <ul class="site-nav__list">
+            <li><a href="index.html" class="site-nav__link">Главная</a></li>
             <li>
-              <a href="index.html" class="site-nav__link site-nav__link--active"
-                >Главная</a
+              <a
+                href="catalog.html"
+                class="site-nav__link site-nav__link--active"
+                >Каталог</a
               >
             </li>
-            <li><a href="catalog.html" class="site-nav__link">Каталог</a></li>
             <li>
               <a href="order.html" class="site-nav__link">Оформить заявку</a>
             </li>
@@ -32,28 +34,15 @@
     </header>
 
     <main class="main">
-      <section class="hero" id="hero">
-        <h1 class="hero__title">Учебный интернет-магазин</h1>
-        <p class="hero__description">
-          Добро пожаловать! Это стартовая страница учебного frontend-проекта.
-          Здесь вы найдёте каталог товаров, сможете оформить заявку и связаться
-          с нами.
-        </p>
-        <a href="catalog.html" class="button">Перейти в каталог</a>
-      </section>
+      <h1 class="section__title">Каталог товаров</h1>
 
-      <section class="section" id="advantages">
-        <h2 class="section__title">Преимущества</h2>
-        <ul>
-          <li>Качественные учебные товары</li>
-          <li>Быстрая доставка</li>
-          <li>Гарантия возврата</li>
-          <li>Поддержка 24/7</li>
-        </ul>
-      </section>
+      <aside class="aside-info">
+        <h3>Фильтры</h3>
+        <p>Здесь будет статический блок фильтров (категории, цена, бренд).</p>
+      </aside>
 
-      <section class="section" id="popular">
-        <h2 class="section__title">Популярные товары</h2>
+      <section class="section">
+        <h2 class="section__title">Все товары</h2>
         <div class="product-grid">
           <article class="product-card">
             <span class="product-card__badge product-card__badge--hit"
@@ -94,24 +83,48 @@
               >Подробнее</a
             >
           </article>
+
+          <article class="product-card">
+            <h3 class="product-card__title">Товар 4</h3>
+            <p class="product-card__description">
+              Краткое описание учебного товара.
+            </p>
+            <p class="product-card__price">2500 руб.</p>
+            <a href="product.html?id=4" class="button product-card__button"
+              >Подробнее</a
+            >
+          </article>
+
+          <article class="product-card">
+            <h3 class="product-card__title">Товар 5</h3>
+            <p class="product-card__description">
+              Краткое описание учебного товара.
+            </p>
+            <p class="product-card__price">3000 руб.</p>
+            <a href="product.html?id=5" class="button product-card__button"
+              >Подробнее</a
+            >
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--discount"
+              >Скидка</span
+            >
+            <h3 class="product-card__title">Товар 6</h3>
+            <p class="product-card__description">
+              Краткое описание учебного товара.
+            </p>
+            <p class="product-card__price">3500 руб.</p>
+            <a href="product.html?id=6" class="button product-card__button"
+              >Подробнее</a
+            >
+          </article>
         </div>
       </section>
-
-      <aside class="aside-info">
-        <h3>Информация для студентов</h3>
-        <p>
-          На следующих практических занятиях этот проект будет расширяться:
-          появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-          БЭМ-структура и адаптивная версия сайта.
-        </p>
-      </aside>
     </main>
 
     <footer class="site-footer">
       <p>© 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </footer>
-
-    <a href="#hero" class="scroll-top" aria-label="Наверх">↑</a>
   </body>
 </html>
